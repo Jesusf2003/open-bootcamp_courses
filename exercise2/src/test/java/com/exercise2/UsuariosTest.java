@@ -6,9 +6,11 @@ import org.junit.jupiter.api.*;
 
 public class UsuariosTest {
 
+	// Instanciando variables
 	Usuarios users = new Usuarios();
 	Usuario user = new Usuario();
 	
+	// Variables
 	private final String nombre = "pruebas";
 	
 	@BeforeEach
@@ -40,6 +42,12 @@ public class UsuariosTest {
 	}
 	
 	@Test
+	void testGetUsuarioInexistent() {
+		String result = users.buscar(user);
+		assertEquals(null, result);
+	}
+	
+	@Test
 	void pruebaBorrarUsuario() {
 		
 		user.nombre = nombre;
@@ -48,7 +56,11 @@ public class UsuariosTest {
 		
 		boolean result = users.borrar(user);
 		assertEquals(true, result);
-		
-		// Volver a copiarlo regresará un error debido a que ya se eliminó el dato anteriormente
+	}
+	
+	@Test
+	void borrarUsuarioInexistent() {
+		boolean result = users.borrar(user);
+		assertEquals(false, result);
 	}
 }

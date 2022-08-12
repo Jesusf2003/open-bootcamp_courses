@@ -17,15 +17,13 @@ public class Usuarios {
 				return actual.nombre;
 			}
 		}
+		
+		users.stream().filter(u -> u.nombre == user.nombre);
+		
 		return null;
 	}
 	
 	public boolean borrar(Usuario user) {
-		
-		if (buscar(user) == "") {
-			return false;
-		}
-		
 		return users.remove(user);
 	}
 }
