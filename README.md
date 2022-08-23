@@ -1,8 +1,9 @@
-# Open-Bootcamp - Cursos
+# Open-Bootcamp - Angular básico
 
-En este repositorio se guardarán los avances de los cursos de
-Open-Bootcamp.
+## Usado
 
-## Cursos
+- NodeJS v16.15.1
 
-- Testing con Junit. __[Ver aquí.](https://github.com/Jesusf2003/open-bootcamp_courses/tree/testing_with_junit)__
+- Npm v8.5.0
+
+- Angular Cli v14.0.7

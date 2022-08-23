@@ -1,0 +1,60 @@
+<p [ngStyle]="{color: 'tomato', fontWeight: 'bolder'}">Lista de elementos:</p>
+
+<p ngClass="underlined">Aquí vamos a iterar una lista y mostrar varios elementos</p>
+
+<p [ngClass]="['underlined', 'small']">Aquí vamos a iterar una lista y mostrar varios elementos</p>
+
+<p [ngClass]="{underlined: false, small: true}">Te recomendamos crear un elemento</p>
+
+<!-- Bloque de directivas estructurales -->
+<button (click)="changeLoading()">
+  {{loading ? 'Terminar cargar' : 'Iniciar cargar'}}
+</button>
+
+<ng-container *ngIf="!loading; else templateEspera">
+  <p>¡Todo listo!</p>
+</ng-container>
+
+<ng-template #templateEspera>
+  <p>Cargando...</p>
+  <p>Espere a que termine el proceso</p>
+</ng-template>
+
+<!-- Bloque para explicar el uso de NgFor -->
+<div *ngFor="let producto of listElement; let i = index; let even = even">
+  <!-- Ámbito de FOR donde tenemos acceso a "Producto" -->
+  <div [ngStyle]="even?{backgroundColor: 'blue', color: 'white'}:{backgroundColor: 'blue', color: 'white'}" class="producto">
+    <p>ID: {{i+1}}</p>
+    <p>{{producto.nombre}} - $ {{producto.precio}}</p>
+    <p> {{producto.descripcion}} </p>
+  </div>
+</div>
+
+<!-- Bloque para entender ngSwitch -->
+<div [ngSwitch]="options">
+  <p [id]="1" *ngSwitchCase="1">Has escogido la Opción 1</p>
+  <p [id]="2" *ngSwitchCase="2">Has escogido la Opción 2</p>
+  <p [id]="3" *ngSwitchCase="3">Has escogido la Opción 3</p>
+  <p [id]="4" *ngSwitchCase="4">Has escogido la Opción 4</p>
+  <p *ngSwitchDefault class="cerrar">Ninguna de las opciones den válida</p>
+</div>
+
+<!-- Selección de opción para el usuario -->
+<div>
+  <input type="radio" name="opciones" (click)="chooseOption(1)"> Opción 1
+  <input type="radio" name="opciones" (click)="chooseOption(2)"> Opción 2
+  <input type="radio" name="opciones" (click)="chooseOption(3)"> Opción 3
+  <input type="radio" name="opciones" (click)="chooseOption(4)"> Opción 4
+  <input type="radio" selected="selected" name="opcion" (click)="chooseOption(0)"> Ocultar
+</div>
+
+<!-- Bloque para explicar el uso de NgFor -->
+<p>Productos de más de 10$</p>
+<div *ngFor="let producto of listElement; let i = index; let even = even">
+  <!-- Ámbito de FOR donde tenemos acceso a "Producto" -->
+  <div *ngIf="producto.precio>10" [ngStyle]="even?{backgroundColor: 'blue', color: 'white'}:{backgroundColor: 'blue', color: 'white'}" class="producto">
+    <p>ID: {{i+1}}</p>
+    <p>{{producto.nombre}} - $ {{producto.precio}}</p>
+    <p> {{producto.descripcion}} </p>
+  </div>
+</div>
