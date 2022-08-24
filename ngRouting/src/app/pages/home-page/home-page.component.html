@@ -1,8 +1,8 @@
 <h1>Home Page</h1>
-
 <h3>¡Bienvenido!</h3>
+<h4 *ngIf="contactSelected">Amigo invisible: {{contactSelected.nombre}}</h4>
 
 <!-- Hacer un login -->
-<a routerLink="/login">Iniciar Sesión</a>
+<a *ngIf="!token" routerLink="/login">Iniciar Sesión</a>
 
-<button>Ver tus contactos</button>
+<button (click)="goToContacts()">Ver tus contactos</button>

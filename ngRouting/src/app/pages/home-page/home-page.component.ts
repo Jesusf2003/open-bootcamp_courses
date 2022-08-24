@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { IContacts } from 'src/app/models/Contact.interface';
 
 
 @Component({
@@ -9,14 +10,33 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
+  token: string | null = null;
+
+  contactSelected: IContacts | undefined;
+
   constructor(
     private router: Router
   ) { }
 
   ngOnInit(): void {
+
+    // Comprobar si existe el token en el SessionStorage
+    this.token = sessionStorage.getItem('token');
+
+    // Leemos el estado del historial de navegación
+    if (history.state.data) {
+      console.log(history.state.data);
+      this.contactSelected = history.state.data;
+    }
   }
 
-  goTocontacts(): void {
-    // this.router.navigate();
+  goToContacts(): void {
+
+    let navExtra: NavigationExtras = {
+      queryParams: {
+        sexo: 'mujer'
+      }
+    }
+    this.router.navigate( ['contacts'], navExtra);
   }
 }

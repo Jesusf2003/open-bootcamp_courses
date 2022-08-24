@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { IContacts } from 'src/app/models/Contact.interface';
 
 @Component({
@@ -13,25 +14,39 @@ export class ContactsPageComponent implements OnInit {
       id: 0,
       nombre: 'Martín',
       apellidos: 'San José',
-      email: 'martin@correo.com'
+      email: 'martin@correo.com',
+      sexo: 'hombre'
     },
     {
       id: 1,
       nombre: 'Andrés',
       apellidos: 'García',
-      email: 'andres@correo.com'
+      email: 'andres@correo.com',
+      sexo: 'hombre'
     },
     {
       id: 2,
       nombre: 'Ana',
       apellidos: 'Hernández',
-      email: 'ana@correo.com'
+      email: 'ana@correo.com',
+      sexo: 'mujer'
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  // Paso de información entre componentes a través del estado
+  backToHome(contact: IContacts) {
+
+    let navExtra: NavigationExtras = {
+      state: {
+        data: contact
+      }
+    }
+
+    this.router.navigate(['/home'], navExtra);
+  }
 }

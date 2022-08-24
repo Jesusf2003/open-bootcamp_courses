@@ -4,5 +4,6 @@
 <div *ngFor="let contact of listContacts; let i=index">
   <div routerLink="contacts/{{contact.id}}">
     <h6> {{contact.nombre}} </h6>
+    <button (click)="backToHome(contact)">Seleccionar como Amigo Invisible</button>
   </div>
 </div>
