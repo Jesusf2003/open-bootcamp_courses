@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { IContacts } from 'src/app/models/Contact.interface';
 
 @Component({
@@ -33,9 +33,18 @@ export class ContactsPageComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+
+    this.route.queryParams.subscribe(
+      (params: any) => {
+        console.log('QueryParams: ', params.sexo);
+      }
+    );
   }
 
   // Paso de información entre componentes a través del estado

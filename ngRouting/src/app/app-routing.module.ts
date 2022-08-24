@@ -30,12 +30,12 @@ const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsPageComponent,
-    canActivate: [ AuthGuard ]
+    // canActivate: [ AuthGuard ]
   },
   {
     path: 'contacts/:id',
     component: ContactDetailsPageComponent,
-    canActivate: [ AuthGuard ]
+    // canActivate: [ AuthGuard ]
   },
   {
     path: '**',
