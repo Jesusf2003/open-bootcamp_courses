@@ -25,17 +25,18 @@ const routes: Routes = [
         path: 'hijo',
         component: HomePageComponent
       }
-    ]
+    ],
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'contacts',
     component: ContactsPageComponent,
-    // canActivate: [ AuthGuard ]
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'contacts/:id',
     component: ContactDetailsPageComponent,
-    // canActivate: [ AuthGuard ]
+    canActivate: [ AuthGuard ]
   },
   {
     path: '**',

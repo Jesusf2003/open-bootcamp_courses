@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'Angular Basic';
 
-  token: string | null = '';
+  token: string | null = null;
 
   constructor(private router: Router) {}
 

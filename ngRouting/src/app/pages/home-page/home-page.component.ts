@@ -34,7 +34,7 @@ export class HomePageComponent implements OnInit {
 
     let navExtra: NavigationExtras = {
       queryParams: {
-        sexo: 'mujer'
+        sexo: 'todos'
       }
     }
     this.router.navigate( ['contacts'], navExtra);

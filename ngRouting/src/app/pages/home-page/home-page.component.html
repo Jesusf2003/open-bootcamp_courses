@@ -1,11 +1,23 @@
-<h1>Home Page</h1>
+<h1>juego del amigo invisible</h1>
 <h3>¡Bienvenido!</h3>
-<h4 *ngIf="contactSelected">Amigo invisible: {{contactSelected.nombre}}</h4>
+
+<ng-container *ngIf="contactSelected; else noSelected">
+  <h4 *ngIf="contactSelected">Tu amigo invisible es: {{contactSelected.nombre}}</h4>
+</ng-container>
+
+<ng-template #noSelected>
+  <div>
+    <p>Selecciona a tu amigo invisible</p>
+  </div>
+</ng-template>
 
 <!-- Hacer un login -->
 <a *ngIf="!token" routerLink="/login">Iniciar Sesión</a>
 
-<button (click)="goToContacts()">Ver tus contactos</button>
+<button (click)="goToContacts()">Ver todos tus contactos</button>
 
-<a [routerLink]="['/contacts']" [queryParams]="{sexo: 'mujer'}">Amigas</a>
-<a [routerLink]="['/contacts']" [queryParams]="{sexo: 'hombre'}">Amigos</a>
+<div>
+  <p>Filtros:</p>
+  <a [routerLink]="['/contacts']" [queryParams]="{sexo: 'mujer'}">Amigas |</a>
+  <a [routerLink]="['/contacts']" [queryParams]="{sexo: 'hombre'}">| Amigos</a>
+</div>
