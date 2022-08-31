@@ -18,12 +18,11 @@ export class ContactService {
           contact.sexo == sexo;
         }
       );
-
       return Promise.resolve(listFiltred);
     } else if (sexo == 'todos') {
       return Promise.resolve(this.listContacts);
     } else {
-      return;
+      return Promise.reject('Filtro no válido');
     }
   }
 }

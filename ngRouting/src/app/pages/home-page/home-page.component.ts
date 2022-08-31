@@ -31,7 +31,6 @@ export class HomePageComponent implements OnInit {
   }
 
   goToContacts(): void {
-
     let navExtra: NavigationExtras = {
       queryParams: {
         sexo: 'todos'

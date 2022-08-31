@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IContacts } from 'src/app/models/Contact.interface';
 
 @Component({
   selector: 'app-contact-details-page',
@@ -9,6 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactDetailsPageComponent implements OnInit {
 
   id: any | undefined;
+  contact: IContacts = {
+    id: 0,
+    nombre: '',
+    apellidos: '',
+    email: '',
+    sexo: 'mujer'
+  };
+  filterPrevie: string = 'todos';
 
   constructor(
     private route: ActivatedRoute
@@ -25,6 +34,13 @@ export class ContactDetailsPageComponent implements OnInit {
       }
     );
 
-    // this.route.parent?.params
+    // Vamos a leer también del State el contacto
+    if (history.state.data) {
+      this.contact = history.state.data;
+    }
+
+    if (history.state.filter) {
+      this.filterPrevie = history.state.filter;
+    }
   }
 }

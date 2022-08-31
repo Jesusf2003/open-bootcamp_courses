@@ -1,4 +1,11 @@
-<h1>Contacto: {{id}}</h1>
+<ng-container *ngIf="contact.email; else errorContact">
+  <h1>Contacto: {{id}}</h1>
+  <h2>Nombre: {{contact.nombre}} {{contact.apellidos}}</h2>
+  <h3>Email: {{contact.email}}</h3>
+</ng-container>
 
-<h2>Nombre: </h2>
-<h2>Email: </h2>
+<ng-template #errorContact>
+  <p>Error en el contacto</p>
+</ng-template>
+
+<a routerLink="/contacts" [queryParams]="{sexo: filterPrevie}">Volver</a>
