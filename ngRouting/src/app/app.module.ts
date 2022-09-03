@@ -11,6 +11,10 @@ import { ContactsPageComponent } from './pages/contacts-page/contacts-page.compo
 import { ContactDetailsPageComponent } from './pages/contact-details-page/contact-details-page.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormularyComponent } from './components/forms/formulary/formulary.component';
+import { NestedFormComponent } from './components/forms/nested-form/nested-form.component';
+import { ArrayFormComponent } from './components/forms/array-form/array-form.component';
+import { ValidFormComponent } from './components/forms/valid-form/valid-form.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +23,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginPageComponent,
     NotFoundPageComponent,
     ContactsPageComponent,
-    ContactDetailsPageComponent
+    ContactDetailsPageComponent,
+    FormularyComponent,
+    NestedFormComponent,
+    ArrayFormComponent,
+    ValidFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // Importamos nuestro módulo personalizado
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
