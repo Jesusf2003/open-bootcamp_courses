@@ -9,12 +9,14 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { ContactDetailsPageComponent } from './pages/contact-details-page/contact-details-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormularyComponent } from './components/forms/formulary/formulary.component';
 import { NestedFormComponent } from './components/forms/nested-form/nested-form.component';
 import { ArrayFormComponent } from './components/forms/array-form/array-form.component';
 import { ValidFormComponent } from './components/forms/valid-form/valid-form.component';
+import { MaterialModule } from './modules/material/material.module';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ValidFormComponent } from './components/forms/valid-form/valid-form.com
     FormularyComponent,
     NestedFormComponent,
     ArrayFormComponent,
-    ValidFormComponent
+    ValidFormComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,11 @@ import { ValidFormComponent } from './components/forms/valid-form/valid-form.com
     // Importamos nuestro módulo personalizado
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // Formularios Reactivos
+    ReactiveFormsModule,
+    // Módulo personalizado de Angular Material
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

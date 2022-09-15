@@ -1,13 +1,10 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 // Módulos Angular Material
-
 import { HttpClientModule } from '@angular/common/http'
-
 import { AppComponent } from './app.component';
-
 import { SaludoComponent } from './saludo/saludo.component';
 
 // Módulos personalizados
@@ -20,6 +17,18 @@ import { ArrayFormComponent } from './components/forms/array-form/array-form.com
 import { ValidatedFormComponent } from './components/forms/validated-form/validated-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Módulos de angular material
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+// Locale para PIPES
+import { registerLocaleData } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+registerLocaleData(localeES); // Registramos el LOCALE_ID de 'es' para poder usarlos en los pipe
+
+import { EjemploPipesComponent } from './components/ejemplo-pipes/ejemplo-pipes.component';
+import { MultiplicaPipe } from './pipes/multiplica.pipe';
+import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +38,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormularyComponent,
     NestedFormComponent,
     ArrayFormComponent,
-    ValidatedFormComponent
+    ValidatedFormComponent,
+    EjemploPipesComponent,
+    MultiplicaPipe,
+    CalcularPuntuacionPipe
   ],
   imports: [
     BrowserModule,
@@ -41,9 +53,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     // Importamos Reactive FormsModule para trabajar con formularios reactivos
     ReactiveFormsModule,
     // Importamos los módulos de Angular Material que usamos en los formularios
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    // Registramos el Locale de ES para que los PIPES salgan en Español
+    {
+      provide: LOCALE_ID,
+      useValue: 'es'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
