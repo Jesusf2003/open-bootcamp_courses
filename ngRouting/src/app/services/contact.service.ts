@@ -11,7 +11,7 @@ export class ContactService {
 
   constructor() { }
 
-  getContacts(sexo?: string): Promise<IContacts[]> | undefined {
+  getContacts(sexo?: string): Promise<IContacts[]> {
     if (sexo == 'hombre' || sexo == 'mujer') {
       let listFiltred: IContacts[] = this.listContacts.filter(
         (contact) => {

@@ -9,25 +9,23 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  email: string = '';
-  password: string = '';
-
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
-
     let token = sessionStorage.getItem('token');
-
     if (token) {
       this.router.navigate(['home']);
     }
   }
 
-  loginUser() {
-
+  loginUser(value: any) {
+    let {email, password} = value;
     this.authService.login(
-      this.email,
-      this.password
+      email,
+      password
     ).subscribe(
       (response) => {
         if (response.token) {

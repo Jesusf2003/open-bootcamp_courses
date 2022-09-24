@@ -1,0 +1,67 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Emile",
+        "last": "Kowalski"
+      },
+      "location": {
+        "street": {
+          "number": 8353,
+          "name": "Dundas Rd"
+        },
+        "city": "Lasalle",
+        "state": "Alberta",
+        "country": "Canada",
+        "postcode": "E4Q 9X2",
+        "coordinates": {
+          "latitude": "-71.3618",
+          "longitude": "-73.9644"
+        },
+        "timezone": {
+          "offset": "-10:00",
+          "description": "Hawaii"
+        }
+      },
+      "email": "emile.kowalski@example.com",
+      "login": {
+        "uuid": "471d7819-ac4f-4039-927a-c12a82cf8b2e",
+        "username": "lazymouse800",
+        "password": "becky",
+        "salt": "NWq8amLf",
+        "md5": "afe94993f076ee1fe7a0f1fdc71ffb16",
+        "sha1": "ad9f3ff97cedd8d953e855c1a3a7360f6c681708",
+        "sha256": "fae63d9b88c169b80d2f43795240faaa5c7b72fb6d1f6a1dfc5d450961bef3c1"
+      },
+      "dob": {
+        "date": "1951-08-25T22:31:41.018Z",
+        "age": 71
+      },
+      "registered": {
+        "date": "2005-12-25T00:53:47.883Z",
+        "age": 16
+      },
+      "phone": "O18 Z56-1948",
+      "cell": "K84 Q12-4556",
+
+      "id": {
+        "name": "SIN",
+        "value": "197617673"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/62.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/62.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/62.jpg"
+      },
+      "nat": "CA"
+    }
+  ],
+  "info": {
+    "seed": "5dfafc75f36f30e5",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}

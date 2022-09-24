@@ -26,7 +26,9 @@ export class ContactsPageComponent implements OnInit {
         console.log('QueryParams: ', params.sexo);
         if (params.sexo) {
           this.filterSex = params.sexo;
-          this.contactservice.getContacts(this.filterSex)
+          this.contactservice.getContacts(
+            this.filterSex
+          )
           ?.then(
             (lista) => this.listContacts = lista
           )

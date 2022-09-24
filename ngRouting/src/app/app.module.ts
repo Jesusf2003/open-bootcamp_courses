@@ -17,6 +17,9 @@ import { ArrayFormComponent } from './components/forms/array-form/array-form.com
 import { ValidFormComponent } from './components/forms/valid-form/valid-form.component';
 import { MaterialModule } from './modules/material/material.module';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
+import { RandomUserComponent } from './components/random-user/random-user.component';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     NestedFormComponent,
     ArrayFormComponent,
     ValidFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    NombreCompletoPipe,
+    RandomUserComponent,
+    RandomContactPageComponent
   ],
   imports: [
     BrowserModule,
