@@ -1,1 +1,9 @@
-<app-random-user></app-random-user>
+<app-random-user [randomContact]="contact"></app-random-user>
+
+<button mat-raised-button color="primary" (click)="getNewContact()">
+  Generar contacto aleatorio
+</button>
+
+<button mat-raised-button color="primary" (click)="getListContacts(10)">
+  Obtener 10 contactos aleatorios
+</button>
