@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { IContacts } from 'src/app/models/Contact.interface';
-
+import { IRandomContact } from 'src/app/mocks/randomuser';
 
 @Component({
   selector: 'app-home-page',
@@ -12,7 +11,7 @@ export class HomePageComponent implements OnInit {
 
   token: string | null = null;
 
-  contactSelected: IContacts | undefined;
+  contactSelected: IRandomContact | undefined;
 
   constructor(
     private router: Router
@@ -33,7 +32,7 @@ export class HomePageComponent implements OnInit {
   goToContacts(): void {
     let navExtra: NavigationExtras = {
       queryParams: {
-        sexo: 'todos'
+        sex: 'todos'
       }
     }
     this.router.navigate( ['contacts'], navExtra);

@@ -34,24 +34,14 @@ export class RandomUserService {
     );
   }
 
-  getRandomContacts(n: number): Observable<Results[]> {
-    const params: HttpParams = new HttpParams().set("results", n);
-    return this.http.get<Results[]>(
-      'https://randomuser.me/api',
-      {
-        params: params
-      }
-    )
-    .pipe(
-      retry(2), // Nº de reintentos de peticiones
-      catchError(this.handleError) // Sacamos error si algo falla
-    );
-  }
-
-  getRandomContactsByGender(sexo: string): Observable<Results> {
-    const params: HttpParams = new HttpParams().set("gender", sexo);
+  getRandomContacts(n: number, sex?: string): Observable<Results> {
+    let params: HttpParams = new HttpParams().set("results", n);
+    if (sex) {
+      console.log('Filtrado por MUJER / HOMBRE');
+      params = params.append("gender", sex);
+    }
     return this.http.get<Results>(
-      "https://randomuser.me/api",
+      'https://randomuser.me/api',
       {
         params: params
       }

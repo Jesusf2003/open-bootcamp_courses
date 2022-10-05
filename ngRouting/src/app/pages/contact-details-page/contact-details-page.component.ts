@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IRandomContact } from 'src/app/mocks/randomuser';
 import { IContacts } from 'src/app/models/Contact.interface';
 
 @Component({
@@ -10,13 +11,7 @@ import { IContacts } from 'src/app/models/Contact.interface';
 export class ContactDetailsPageComponent implements OnInit {
 
   id: any | undefined;
-  contact: IContacts = {
-    id: 0,
-    nombre: '',
-    apellidos: '',
-    email: '',
-    sexo: 'mujer'
-  };
+  contact: IRandomContact | undefined;
   filterPrevie: string = 'todos';
 
   constructor(
@@ -24,7 +19,6 @@ export class ContactDetailsPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     // Vamos a leer los parámetros
     this.route.params.subscribe(
       (params: any) => {
