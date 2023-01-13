@@ -12,7 +12,7 @@ export class RandomUserComponent implements OnInit {
   @Input() randomContact: IRandomContact | undefined;
 
   constructor(
-  ) { }
+  ) {}
 
   ngOnInit(): void {
   }

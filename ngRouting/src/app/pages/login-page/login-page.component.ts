@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
-@Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
-})
+@Component(
+  {
+    selector: 'app-login-page',
+    templateUrl: './login-page.component.html',
+    styleUrls: ['./login-page.component.css']
+  }
+)
 export class LoginPageComponent implements OnInit {
 
   constructor(
@@ -29,8 +31,8 @@ export class LoginPageComponent implements OnInit {
     ).subscribe(
       (response) => {
         if (response.token) {
-          sessionStorage.setItem('token', '123456789');
-          this.router.navigate(['home']);
+          sessionStorage.setItem('token', response.token);
+          this.router.navigate(['/']);
         }
       },
       (error) => {

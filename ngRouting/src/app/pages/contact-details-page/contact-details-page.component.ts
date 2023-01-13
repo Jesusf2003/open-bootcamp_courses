@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IRandomContact } from 'src/app/mocks/randomuser';
-import { IContacts } from 'src/app/models/Contact.interface';
 
 @Component({
   selector: 'app-contact-details-page',

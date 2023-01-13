@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Módulos de angular material
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 // Locale para PIPES
 import { registerLocaleData } from '@angular/common';
@@ -28,6 +29,8 @@ registerLocaleData(localeES); // Registramos el LOCALE_ID de 'es' para poder usa
 import { EjemploPipesComponent } from './components/ejemplo-pipes/ejemplo-pipes.component';
 import { MultiplicaPipe } from './pipes/multiplica.pipe';
 import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
+import { ExampleAnimationComponent } from './components/example-animation/example-animation.component';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
     ValidatedFormComponent,
     EjemploPipesComponent,
     MultiplicaPipe,
-    CalcularPuntuacionPipe
+    CalcularPuntuacionPipe,
+    ExampleAnimationComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,8 @@ import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
     ReactiveFormsModule,
     // Importamos los módulos de Angular Material que usamos en los formularios
     BrowserAnimationsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [
     // Registramos el Locale de ES para que los PIPES salgan en Español

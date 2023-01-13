@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { IRandomContact, Results } from 'src/app/mocks/randomuser';
 import { IContacts } from 'src/app/models/Contact.interface';
-import { ContactService } from 'src/app/services/contact.service';
 import { RandomUserService } from 'src/app/services/random-user.service';
 
 @Component({
@@ -13,6 +12,7 @@ import { RandomUserService } from 'src/app/services/random-user.service';
 export class ContactsPageComponent implements OnInit {
 
   filterSex: string = 'todos';
+  loading: boolean = true;
   listContacts: IContacts[] = [];
   listRandomContacts: IRandomContact[] = [];
 
@@ -40,9 +40,13 @@ export class ContactsPageComponent implements OnInit {
                     }
                   )
                   console.log(this.listRandomContacts);
+                  this.loading = false;
                 },
                 error: (error) => console.error(error),
-                complete: () => console.info('Petición de random contacts terminada')
+                complete: () => {
+                  console.info('Petición de random contacts terminada');
+                  this.loading = false;
+                }
               }
             );
           }
@@ -57,9 +61,13 @@ export class ContactsPageComponent implements OnInit {
                   }
                 )
                 console.log(this.listRandomContacts);
+                this.loading = false;
               },
               error: (error) => console.error(error),
-              complete: () => console.info('Petición de random contacts terminada')
+              complete: () => {
+                console.info('Petición de random contacts terminada');
+                this.loading = false;
+              }
             }
           );
         }
@@ -74,6 +82,6 @@ export class ContactsPageComponent implements OnInit {
         data: contact
       }
     }
-    this.router.navigate(['/home'], navExtra);
+    this.router.navigate(['/dashboard'], navExtra);
   }
 }

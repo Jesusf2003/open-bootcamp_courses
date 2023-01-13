@@ -1,7 +1,7 @@
 export interface IContacts {
   id: number;
-  nombre: string;
-  apellidos: string;
+  name: string;
+  lname: string;
   email: string;
-  sexo: string;
+  sex: string;
 }
