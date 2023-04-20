@@ -48,8 +48,8 @@ const ExampleComponent = () => {
       <h3>Nombre: {person.name}</h3>
       <h4>Email: {person.email}</h4>
       {/* Bloque de botones para actualizar el estado del componente */}
-      <button onClick={incrementCounter()}>Incrementar contador</button>
-      <button onClick={updatePerson(person)}>Actualizar persona</button>
+      <button onClick={() => incrementCounter()}>Incrementar contador</button>
+      <button onClick={() => updatePerson(person.name)}>Actualizar persona</button>
     </div>
   );
 }

@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 // import Greeting from './components/pure/greeting';
 // import GreetingF from './components/pure/greetingF';
-import ExampleComponent from './hooks/Example1'
-import TaskListComponent from './components/container/task-list';
+// import ExampleComponent from './hooks/Example1';
+import Example2Component from './hooks/Example2';
+// import TaskListComponent from './components/container/task-list';
 // import ContactComponent from './components/pure/contact';
 
 function App() {
@@ -24,10 +25,11 @@ function App() {
         {/* Componente de ejemplo funcional */}
         {/* <GreetingF name="Martín"></GreetingF> */}
         {/* Componente de listado de tareas */}
-        <TaskListComponent></TaskListComponent>
+        {/* <TaskListComponent></TaskListComponent> */}
         {/* <ContactComponent contact={contactTest}></ContactComponent> */}
         {/* Ejemplos de uso de HOOKS */}
-        <ExampleComponent></ExampleComponent>
+        {/* <ExampleComponent></ExampleComponent> */}
+        <Example2Component></Example2Component>
       </header>
     </div>
   );
